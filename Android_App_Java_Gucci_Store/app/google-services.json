@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1003318773420",
+    "firebase_url": "https://dhuramistryproject2-default-rtdb.firebaseio.com",
+    "project_id": "dhuramistryproject2",
+    "storage_bucket": "dhuramistryproject2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1003318773420:android:5d4554e2374b605eb2c109",
+        "android_client_info": {
+          "package_name": "com.example.dhura_mistry_project2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1003318773420-mrvn2ti52d4n0fbfap9ci9jae6hnnqnv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dhura_mistry_project2",
+            "certificate_hash": "eaa56527773edf53bd46720f8474056e9bba7fc7"
+          }
+        },
+        {
+          "client_id": "1003318773420-hl7k2ga87rl2955lvqmfih1d17g6o1i3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg2iXejDz7i4rBzfXUjH0oItN2DK9Wjrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1003318773420-hl7k2ga87rl2955lvqmfih1d17g6o1i3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

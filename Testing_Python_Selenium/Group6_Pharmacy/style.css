@@ -1,0 +1,277 @@
+
+  body {
+    margin: 0;
+    text-align: center;
+    font-family: "Merriweather", serif;
+  }
+  
+  h1 {
+    margin: 50px auto 0 auto;
+    font-weight: bold;
+  }
+  
+  h2,
+  .sub-heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5rem;
+    font-weight: normal;
+  }
+  
+  h3 {
+    font-family: "Montserrat", sans-serif;
+    color: #11999e;
+  }
+  
+  p {
+    color: #40514e;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #ffffff;
+    list-style-type: none;
+  }
+  
+  main {
+    padding-top: 70px;
+  }
+  
+  .container {
+    font-family: "Hind Madurai", sans-serif;
+    padding: 0 10em;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heading {
+    justify-content: space-between;
+    background-color: #19150a;
+    width: -webkit-fill-available;
+    color: #ffffff;
+  }
+	
+.filterbygender{
+	margin-top: 2rem;
+    width: 50rem;
+    margin-left: 20rem;
+}
+
+.filterbygenderLabel {
+    width: 10rem;
+    text-align: left;
+}
+
+.filterbygenderSelect {   
+    width: 40%;
+}
+
+.back{
+	padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-left: 23px;
+    font-size: 13px;
+    margin-top: 20px;
+    background: #766f6f;
+}
+
+.btn{
+	color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+	background:black;
+}
+
+.ml-50{
+	margin-left:50px;
+}
+/*********** NavBar Starts****************/
+ul {
+  list-style: none;
+}
+
+nav {
+  font-size: 1.3em;
+  font-weight: 500;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav a:link {
+  padding: 10px;
+  margin: 0 15px;
+  color: #ffffff;
+}
+
+nav a:active {
+  padding: 10px;
+  margin: 0 15px;
+  color: #ffffff;
+}
+
+nav a:visited {
+  color: #dda278;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #c6f2f1;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+#homepage-title {
+  margin: 10px 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2em;
+}
+
+/********************* NavBar Ends********************/
+
+input[type=text], input[type=password], input[type=date], input[type=dob],input[type=txtExperience], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  margin-top: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/******************* Footer Starts******************/
+
+footer {
+  height: 100px;
+  text-align: center;
+  background-color: #19150a;
+  position: static;
+}
+
+.footer_marg {
+  color: #ffffff;
+  padding-top: 1rem;
+}
+
+.copyright {
+  color: #eaf6f6;
+  font-size: 0.8125rem;
+  margin-top: 2%;
+}
+
+/****************** Footer Ends**************************/
+
+.EditButton{
+font-style: bold;
+color: black;
+}
+
+.DeleteButton{
+  font-style: bold;
+  color: red;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+      margin-left: 5%;
+      margin-bottom: 5%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th{
+    background-color:black;
+    color:white;
+  }
+  
+  tr {
+    background-color: #dddddd;
+  }
+  .button {
+    background-color: black; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.phFlex{
+ display: flex;
+ padding-bottom: 2rem;
+}
+
+.phLabel{
+  width: 17rem;
+  text-align: left;
+}
+
+.patientPhp{
+  margin: 3rem;
+  width: 50rem;
+  margin-left: 10rem;
+}
+
+.Name{
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pageH{
+  height:400px;
+}
+
+.pageB{
+  height:600px;
+}
+
+.btnpad{
+  margin: 1rem;
+}
+
+.fontB{
+  background-color: black;
+  color: white;
+}
+
+.fsize{
+  text-align: end;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,17 @@
+﻿@model OnlineStore.Models.Database.Product
+
+<div class="col-4 product" data-price="@Html.DisplayFor(model => model.Price)" data-colour='red' data-size='large'>
+	<a href="/product/@Html.DisplayFor(model => model.Id)">
+		<img src="/image/@Html.DisplayFor(model => model.Image.Path)">
+		<h4>@Html.DisplayFor(model => model.Name)</h4>
+		<p></p>
+		<div class="rating">
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star"></i>
+			<i class="fa fa-star-o"></i>
+		</div>
+		<p>$@Html.DisplayFor(model => model.Price)</p>
+	</a>
+</div>

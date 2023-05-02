@@ -1,0 +1,79 @@
+﻿@model IEnumerable<OnlineStore.Models.Database.Product>
+@{
+	ViewData["Title"] = "Shop Page";
+}
+
+
+<!--Featured & Latest Product Section Start -->
+<div class="small-container row container-overlay">
+
+	<div class="row row-2 width-100">
+		<input id="search" class="product-search" placeholder="Search">
+
+		<h2>All Products</h2>
+		<select class="price-sorting">
+			<option disabled selected>Sort By</option>
+			<option value="l2h">Price: Low to High</option>
+			<option value="h2l">Price: High to Low</option>
+			<!--<option value="featured">Featured</option>
+			<option value="new">Newest Arrivals</option>-->
+		</select>
+	</div>
+
+	<div class="left-filter-box">
+		<h2>Filters</h2>
+		<div id='filters' class='sections'>
+			<div class='filter-attributes'>
+				<h4><b>Colour</b></h4>
+				<div class="filter-input-box">
+					<div class="filter-input-sub">
+						<label for="red"><input type='checkbox' class="filter-input" name='colour' id='red' value='red'>Red</label>
+					</div>
+					<div class="filter-input-sub">
+						<label for="blue"><input type='checkbox' class="filter-input" name='colour' id='blue' value='blue'>Blue</label>
+					</div>
+					<div class="filter-input-sub">
+						<label for="green"><input type='checkbox' class="filter-input" name='colour' id='green' value='green'>Green</label>
+					</div>
+					<div class="filter-input-sub">
+						<label for="yellow"><input type='checkbox' class="filter-input" name='colour' id='yellow' value='yellow'>Yellow</label>
+					</div>
+				</div>
+			</div>
+			<div class='filter-attributes'>
+				<h4><b>Size</b></h4>
+
+				<div class="filter-input-sub">
+					<label for="small"><input type='checkbox' name='size' id='small' value='small'>Small</label>
+				</div>
+				<div class="filter-input-sub">
+					<label for="medium"><input type='checkbox' name='size' id='medium' value='medium'>Medium</label>
+				</div>
+				<div class="filter-input-sub">
+					<label for="large"><input type='checkbox' name='size' id='large' value='large'>Large</label>
+				</div>
+				<div class="filter-input-sub">
+					<label for="xlarge"><input type='checkbox' name='size' id='xlarge' value='xlarge'>X-Large</label>
+				</div>
+			</div>
+			<div>
+				<br>
+				<input type='button' id='none' class=System.NullReferenceException: 'Object reference not set to an instance of an object.'"clear-all" value='Clear all'>
+			</div>
+		</div>
+	</div>
+
+	<!-- Featured Product Start -->
+	<div class="row products-grid right-product-box">
+		<!--Featured Product-1 -->
+		 @foreach (var i in Model)
+		{
+			@await Html.PartialAsync("_CardProduct", i);
+		}
+	</div>
+
+
+	<ul class="page-btn pagination justify-content-center pagination-sm"></ul>
+
+</div>
+<!-- Featured & Latest Product Section End -->

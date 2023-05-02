@@ -1,0 +1,10 @@
+﻿@model OnlineStore.Models.Database.Product
+
+<div class="card prod_div" style="width: 18rem; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+  <img src="/image/@Html.DisplayFor(model => model.Image.Path)" class="card-img-top" alt="" style="border-top-left-radius:10px; border-top-right-radius:10px; height: 15rem; object-fit: cover;">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size: 20px; font-weight: bold;">@Html.DisplayFor(model => model.Name)</h5>
+    <p class="card-text" style="font-size: 18px;">Price: $@Html.DisplayFor(model => model.Price)</p>
+    <a href="/product/@Html.DisplayFor(model => model.Id)" class="btn btn-primary" style="background-color: #1abc9c; border-color: #1abc9c;">View Product</a>
+  </div>
+</div>

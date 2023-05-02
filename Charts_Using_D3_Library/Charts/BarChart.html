@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bar Chart for Average Temperature in New York City</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* CSS styles here */
+  </style>
+  <header>
+    <nav>
+      <a href="../index.html">Home</a>
+      <p>Click the link above to get back to HOME</p>
+    </nav>
+  </header>
+</head>
+
+<body>
+  <h1>Bar Chart for Average Temperature in New York City</h1>
+  <h2>January 2023</h2> <!-- added subtitle -->
+  <div class="chart"></div>
+  <script>
+    const apiKey = "cec814f7725093594344f95658039db9";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=New York&appid=${apiKey}`;
+
+    // Make API call
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        const dailyData = data.list.reduce((acc, item) => {
+          const date = new Date(item.dt_txt).toLocaleDateString();
+          const temperature = item.main.temp - 273.15;
+          if (acc[date]) {
+            acc[date].temperatureSum += temperature;
+            acc[date].count++;
+          } else {
+            acc[date] = {
+              date: date,
+              temperatureSum: temperature,
+              count: 1,
+            };
+          }
+          return acc;
+        }, {});
+
+        const barData = Object.values(dailyData).map((item) => {
+          return {
+            date: item.date,
+            averageTemperature: item.temperatureSum / item.count,
+          };
+        });
+
+        // Create chart using D3
+        const margin = { top: 50, right: 200, bottom: 80, left: 100 };
+        const width = 800;
+        const height = 400;
+
+        const xScale = d3
+          .scaleBand()
+          .domain(barData.map((d) => d.date))
+          .range([0, width])
+          .padding(0.1)
+          .paddingInner(0.2)
+          .align(0.5);
+
+
+        const yScale = d3
+          .scaleLinear()
+          .domain([0, d3.max(barData, (d) => d.averageTemperature)])
+          .range([height, 0]);
+
+        const svg = d3
+          .select(".chart")
+          .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom);
+
+        const g = svg
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Add bars
+        const bars = g
+          .selectAll(".bar")
+          .data(barData)
+          .enter()
+          .append("rect")
+          .attr("class", "bar")
+          .attr("x", (d) => xScale(d.date) + xScale.bandwidth() / 4)
+          .attr("y", (d) => yScale(d.averageTemperature))
+          .attr("width", xScale.bandwidth() / 2)
+          .attr("height", (d) => height - yScale(d.averageTemperature))
+          .on("mouseover", handleMouseOver)
+          .on("mouseout", handleMouseOut);
+
+        // Add x-axis
+        const xAxis = d3.axisBottom(xScale);
+        g.append("g")
+          .attr("class", "x-axis")
+          .attr("transform", `translate(0,${height})`)
+          .call(xAxis)
+          .selectAll("text")
+          .attr("class", "axis")
+          .style("text-anchor", "end")
+          .attr("dx", "-0.5em")
+
+        // Add y-axis
+        const yAxis = d3.axisLeft(yScale);
+        g.append("g")
+          .attr("class", "y-axis")
+          .call(yAxis)
+          .selectAll("text")
+          .attr("class", "axis");
+
+        // Add x-axis label
+        svg.append("text")
+          .attr("class", "axis-label")
+          .attr("x", margin.left + width / 2)
+          .attr("y", height + margin.top + 50)
+          .text("Date");
+
+        // Add y-axis label
+        svg.append("text")
+          .attr("class", "axis-label")
+          .attr("x", -(margin.top + height / 1.5))
+          .attr("y", margin.left - 50)
+          .attr("transform", "rotate(-90)")
+          .text("Average Temperature (°C)");
+
+        // Add legend
+        const legend = svg
+          .append("g")
+          .attr("class", "legend")
+          .attr("transform", `translate(${margin.left},${margin.top - 20})`);
+
+        // Add legend color
+        legend
+          .append("rect")
+          .attr("x", width - 10)
+          .attr("width", 20)
+          .attr("height", 20)
+          .attr("fill", "#ff7f0e");
+
+        // Add legend text
+        legend
+          .append("text")
+          .attr("x", width + 15)
+          .attr("y", 10)
+          .text("Average Temperature (°C)");
+
+        // Add tooltip
+        const tooltip = d3
+          .select(".chart")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+
+        function handleMouseOver(event, d) {
+          d3.select(this).style("fill", "#ffa500");
+          tooltip
+            .html(
+              `<strong>${d.date}</strong><br>${d.averageTemperature.toFixed(
+                1
+              )}°C`
+            )
+            .style("left", `${event.pageX}px`)
+            .style("top", `${event.pageY}px`)
+            .transition()
+            .duration(200)
+            .style("opacity", 0.9);
+        }
+
+        function handleMouseOut(event, d) {
+          d3.select(this).style("fill", "#ff7f0e");
+          tooltip.transition().duration(200).style("opacity", 0);
+        }
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  </script>
+</body>
+
+</html>

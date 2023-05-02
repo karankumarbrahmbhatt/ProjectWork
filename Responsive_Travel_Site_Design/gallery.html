@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>WorldTravel</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- font awesome cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- fonts -->
+        <link rel = "stylesheet" href = "font/fonts.css">
+        <!-- css -->
+        <link rel = "stylesheet" href = "css/style.css">
+    </head>
+    <body>
+        <!-- navbar  -->
+        <nav class = "navbar">
+            <div class = "container flex">
+                <a href = "index.html" class = "site-brand">
+                    World<span>Travel</span>
+                </a>
+
+                <button type = "button" id = "navbar-show-btn" class = "flex">
+                    <i class = "fas fa-bars"></i>
+                </button>
+                <div id = "navbar-collapse">
+                    <button type = "button" id = "navbar-close-btn" class = "flex">
+                        <i class = "fas fa-times"></i>
+                    </button>
+                    <ul class = "navbar-nav">
+                        <li class = "nav-item">
+                            <a href = "index.html" class = "nav-link">Home</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "gallery.html" class = "nav-link">Gallery</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "blog.html" class = "nav-link">Blog</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "about.html" class = "nav-link">About</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "contact.html" class = "nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end of navbar  -->
+
+        <!-- header -->
+        <header class = "flex header-sm">
+            <div class = "container">
+                <div class = "header-title">
+                    <h1>Gallery</h1>
+                    <p>Discover new places of your dream, and we'll help making it true. Please go through some of our popular places to choose your destination of travel.</p>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- img modal -->
+        <div id = "img-modal-box">
+            <div id = "img-modal">
+                <button type = "button" id = "modal-close-btn" class = "flex">
+                    <i class = "fas fa-times"></i>
+                </button>
+                <button type = "button" id = "prev-btn" class = "flex">
+                    <i class = "fas fa-chevron-left"></i>
+                </button>
+                <button type = "button" id = "next-btn" class = "flex">
+                    <i class = "fas fa-chevron-right"></i>
+                </button>
+                <img src = "images/gallery-1.jpg">
+            </div>
+        </div>
+        <!-- end of img modal -->
+
+        <!-- popular places section -->
+        <section id = "popular" class = "py-4">
+            <div class = "title-wrap">
+                <span class = "small-title">know about some coo destination</span>
+                <h2 class = "large-title">Popular Places</h2>
+            </div>
+
+            <div class = "gallery-row">
+                <div class = "gallery-item shadow">
+                    <img src = "images/popular-1.jpg" alt = ""> <!-- https://www.pexels.com/ru-ru/photo/1461974/ -->
+                    <div>
+                        <span>Eiffel Tower, Paris</span>
+                        <ul class = "rating flex">
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star-half-alt"></i></li>
+                            <li>&nbsp;400 reviews</li>
+                        </ul>
+                        <p class = "gallery-text">The Eiffel Tower—or as the French call it, La Tour Eiffel—is one of the world's most recognizable landmarks. The tower was designed as the centerpiece of the 1889 World's Fair in Paris and was meant to commemorate the centennial of the French Revolution.</p>
+                    </div>
+                </div>
+
+                <div class = "gallery-item shadow">
+                    <img src = "images/popular-2.jpg" alt = ""> <!-- https://www.pexels.com/search/peru/ -->
+                    <div>
+                        <span>Machu Picchu, Peru</span>
+                        <ul class = "rating flex">
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star-half-alt"></i></li>
+                            <li>&nbsp;400 reviews</li>
+                        </ul>
+                        <p class = "gallery-text">Machu Picchu is the most visited tourist attraction in Peru because of its intricate system of Inca ruins. Machu Picchu sights are famous because it was the ceremonial center for the Incas, and the biggest draw is to visit the ruins and the breathtaking views you have while exploring.</p>
+                    </div>
+                </div>
+
+                <div class = "gallery-item shadow">
+                    <img src = "images/popular-3.jpg" alt = ""> <!-- https://www.pexels.com/photo/santorini-greece-3264723/ -->
+                    <div>
+                        <span>Acropolis, Athens</span>
+                        <ul class = "rating flex">
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star-half-alt"></i></li>
+                            <li>&nbsp;400 reviews</li>
+                        </ul>
+                        <p class = "gallery-text">Athens the Acropolis of Athens and its monuments are universal symbols of the classical spirit and civilization and form the greatest architectural and artistic complex bequeathed by Greek Antiquity to the world.</p>
+                    </div>
+                </div>
+
+                <div class = "gallery-item shadow">
+                    <img src = "images/popular-4.jpg" alt = ""> <!-- https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260 -->
+                    <div>
+                        <span>Bali, Indonesia</span>
+                        <ul class = "rating flex">
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star-half-alt"></i></li>
+                            <li>&nbsp;400 reviews</li>
+                        </ul>
+                        <p class = "gallery-text">Bali is best known for surfing, beaches, mountainous jungle rainforest, temples, yoga, Hinduism, spirituality, scuba diving, the vibe of the island, and for being a tropical island paradise.</p>
+                    </div>
+                </div>
+
+                <div class = "gallery-item shadow">
+                    <img src = "images/popular-5.jpg" alt = ""> <!-- https://images.pexels.com/photos/5619276/pexels-photo-5619276.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260 -->
+                    <div>
+                        <span>Dubai, United Arab Emirates</span>
+                        <ul class = "rating flex">
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star-half-alt"></i></li>
+                            <li>&nbsp;400 reviews</li>
+                        </ul>
+                        <p class = "gallery-text">Dubai is a city and emirate in the United Arab Emirates known for luxury shopping, ultramodern architecture and a lively nightlife scene. Burj Khalifa, an 830m-tall tower, dominates the skyscraper-filled skyline. At its foot lies Dubai Fountain, with jets and lights choreographed to music.</p>
+                    </div>
+                </div>
+
+                <div class = "gallery-item shadow">
+                    <img src = "images/popular-6.jpg" alt = ""> <!-- https://images.squarespace-cdn.com/content/v1/55ee34aae4b0bf70212ada4c/1582779321236-PKJ73O781DX5NUQFHHUB/image-asset.jpeg?format=750w -->
+                    <div>
+                        <span>Thimphu, Bhutan</span>
+                        <ul class = "rating flex">
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star-half-alt"></i></li>
+                            <li>&nbsp;400 reviews</li>
+                        </ul>
+                        <p class = "gallery-text">Bhutan is famous for its colorful, vibrant festivals. Bhutan is well known for holding some of the most vibrant and colorful festivals in the world. In fact, many travelers time their trip to Bhutan to coincide with the famous Paro and Thimphu Festivals.</p>
+                    </div>
+                </div>
+
+                <div class = "gallery-item shadow">
+                    <img src = "images/popular-7.jpg" alt = ""> <!-- https://avatanplus.com/files/effects/mid/5e8f6a0785da417160362d7c.jpg -->
+                    <div>
+                        <span>Havana, Cuba</span>
+                        <ul class = "rating flex">
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star-half-alt"></i></li>
+                            <li>&nbsp;400 reviews</li>
+                        </ul>
+                        <p class = "gallery-text">Havana. A trip to Cuba is not complete without a visit to its vibrant capital, Havana. Known for its old architecture, vintage cars, beautiful beaches, and tasty Cuban cocktails, the city has become a popular tourist destination.</p>
+                    </div>
+                </div>
+
+                <div class = "gallery-item shadow">
+                    <img src = "images/popular-8.jpg" alt = ""> <!-- https://images.pexels.com/photos/753339/pexels-photo-753339.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260 -->
+                    <div>
+                        <span>Moskva, Russia</span>
+                        <ul class = "rating flex">
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star"></i></li>
+                            <li><i class = "fas fa-star-half-alt"></i></li>
+                            <li>&nbsp;400 reviews</li>
+                        </ul>
+                        <p class = "gallery-text">Moscow is not only the political centre of Russia but also the country's most populous city and its industrial, cultural, scientific, and educational capital. For more than 600 years Moscow also has been the spiritual centre of the Russian Orthodox Church.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of popular places section -->
+        
+
+        <!-- footer -->
+        <footer class = "py-4">
+            <div class = "container footer-row">
+                <div class = "footer-item">
+                    <a href = "index.html" class = "site-brand">
+                        World<span>Travel</span>
+                    </a>
+                    <p class = "text">A Destination For The New Millennium, No matter who you are, or where you are going, our travel brands help every type of traveler not only find the trip that’s right for them, but get the best value every time.</p>
+                </div>
+
+                <div class = "footer-item">
+                    <h2>Follow us on: </h2>
+                    <ul class = "social-links">
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#">
+                                <i class = "fab fa-pinterest"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class = "footer-item">
+                    <h2>Popular Places:</h2>
+                    <ul>
+                        <li><a href = "#">Thailand</a></li>
+                        <li><a href = "#">Australia</a></li>
+                        <li><a href = "#">Maldives</a></li>
+                        <li><a href = "#">Switzerland</a></li>
+                        <li><a href = "#">Germany</a></li>
+                    </ul>
+                </div>
+
+                <div class = "subscribe-form footer-item">
+                    <h2>Subscribe for Newsletter!</h2>
+                    <form class = "flex">
+                        <input type = "email" placeholder="Enter Email" class = "form-control">
+                        <input type = "submit" class = "btn" value = "Subscribe">
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <!-- end of footer -->
+        <!-- js -->
+        <script src = "js/script.js"></script>
+        <script>
+            // image modal
+            const allGalleryItem = document.querySelectorAll('.gallery-item');
+            const imgModalDiv = document.getElementById('img-modal-box');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            let imgIndex = 0;
+
+            allGalleryItem.forEach((galleryItem) => {
+                galleryItem.addEventListener('click', () => {
+                    imgModalDiv.style.display = "block";
+                    let imgSrc = galleryItem.querySelector('img').src;
+                    imgIndex = parseInt(imgSrc.split("-")[1].substring(0, 1));
+                    showImageContent(imgIndex);
+                })
+            });
+
+            // next click
+            nextBtn.addEventListener('click', () => {
+                imgIndex++;
+                if(imgIndex > allGalleryItem.length){
+                    imgIndex = 1;
+                }
+                showImageContent(imgIndex);
+            });
+
+            // previous click
+            prevBtn.addEventListener('click', () => {
+                imgIndex--;
+                if(imgIndex <= 0){
+                    imgIndex = allGalleryItem.length;
+                }
+                showImageContent(imgIndex);
+            });
+
+            function showImageContent(index){
+                imgModalDiv.querySelector('#img-modal img').src = `images/gallery-${index}.jpg`;
+            }
+
+            modalCloseBtn.addEventListener('click', () => {
+                imgModalDiv.style.display = "none";
+            })
+        </script>
+    </body>
+</html>

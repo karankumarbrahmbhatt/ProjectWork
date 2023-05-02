@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Six Tabs Page</title>
+  <style>
+    /* Global styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer span {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Tab styles */
+    .tab {
+      display: none;
+      padding: 1rem;
+    }
+
+    /* Tab button styles */
+    .tab-button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: #fff;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Six Different Visualization of Data (Chart)</h1>
+    <nav>
+      <a href="Charts/BarChart.html"><button class="tab-button one">Bar Chart</button></a>
+      <a href="Charts/ConnectedScatter.html"><button class="tab-button two">Connected Scatter Chart</button></a>
+      <a href="Charts/HeatMap.html"><button class="tab-button three">Heat Map</button></a>
+      <a href="Charts/LineChart.html"><button class="tab-button four">Line Chart</button></a>
+      <a href="Charts/BubbleChart.html"><button class="tab-button five">Bubble Chart</button></a>
+      <a href="Charts/DonutChart.html"><button class="tab-button six">Donut Chart</button></a>
+      <a href="Charts/ScatterPlot.html"><button class="tab-button seven">Scatter Plot</button></a>
+    </nav>
+  </header>
+
+
+  <div id="tab1" class="tab" style="display: block;">
+    <h2>Project 2 Group 4</h2>
+    <p>The project contains 6 different visualizations of the data (With Mouseover events) using OpenWeatherMAp API,
+      JavaScript, HTML, CSS</p>
+    <img src="Data.png" alt="CHARTS">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <span>&copy; 2023. All rights reserved.</span>
+    <span>Karankumar Brahmbhatt (7126535)</span>
+    <span>Dhwani Dedhia (8739992)</span>
+    <span>Nishant Gautam (8780017)</span>
+  </footer>
+
+  <!-- Script for tab functionality -->
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+</body>
+
+</html>

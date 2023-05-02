@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Temperature Line Chart for New York City</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    .chart {
+      width: 100%;
+      height: 500px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .axis {
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
+
+    .axis-label {
+      font-weight: bold;
+    }
+
+    .axis line,
+    .axis path {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    .axis .tick line {
+      stroke: #000;
+      opacity: 0.2;
+    }
+
+    .description {
+      font-size: 16px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .line {
+      fill: none;
+      stroke: #ff7f0e;
+      stroke-width: 2px;
+    }
+
+    .tooltip {
+      position: absolute;
+      pointer-events: none;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      padding: 6px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+
+    .legend {
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+  <nav>
+    <a href="../index.html">Home</a>
+    <p>Click the link above to get back to HOME</p>
+  </nav>
+</head>
+
+<body>
+  <div class="description">
+    Temperature Line Chart for New York City
+  </div>
+  <div class="chart"></div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const apiKey = "cec814f7725093594344f95658039db9";
+      const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=New York&appid=${apiKey}`;
+
+      // Make API call
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          const lineData = data.list.map((item) => {
+            return {
+              date: new Date(item.dt_txt),
+              temperature: item.main.temp - 273.15,
+            };
+          });
+
+          // Create chart using D3
+          const margin = { top: 50, right: 100, bottom: 120, left: 100 };
+          const width = 800;
+          const height = 400;
+
+          const xScale = d3
+            .scaleTime()
+            .domain(d3.extent(lineData, (d) => d.date))
+            .range([0, width]);
+
+          const yScale = d3
+            .scaleLinear()
+            .domain(d3.extent(lineData, (d) => d.temperature))
+            .range([height, 0]);
+
+          const line = d3
+            .line()
+            .x((d) => xScale(d.date))
+            .y((d) => yScale(d.temperature));
+
+          const svg = d3
+            .select(".chart")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom);
+
+          const g = svg
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+          // Add tooltip
+          const tooltip = d3
+            .select(".chart")
+            .append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+          // Add line
+          g.append("path")
+            .datum(lineData)
+            .attr("class", "line")
+            .attr("d", line);
+
+          // Add x axis
+          // Add x axis
+          const xAxis = g
+            .append("g")
+            .attr("class", "x axis")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(xScale).ticks(d3.timeDay.every(1)).tickSizeOuter(0));
+
+          xAxis
+            .append("text")
+            .attr("class", "axis-label")
+            .attr("x", width / 2)
+            .attr("y", 40)
+            .attr("text-anchor", "middle")
+            .text("Date");
+
+          // Add y axis
+          const yAxis = g
+            .append("g")
+            .attr("class", "y axis")
+            .call(d3.axisLeft(yScale).tickSizeOuter(0));
+
+          yAxis
+            .append("text")
+            .attr("class", "axis-label")
+            .attr("transform", "rotate(-90)")
+            .attr("x", -height / 2)
+            .attr("y", -margin.left)
+            .attr("text-anchor", "middle")
+            .text("Temperature (°C)");
+
+          // Add x-axis label
+          svg.append("text")
+            .attr("class", "x label")
+            .attr("text-anchor", "middle")
+            .attr("x", width / 2 + margin.left)
+            .attr("y", height + margin.top + margin.bottom - 10)
+            .text("Date");
+
+          // Add y-axis label
+          svg.append("text")
+            .attr("class", "y label")
+            .attr("text-anchor", "middle")
+            .attr("x", -height / 2 - margin.top)
+            .attr("y", margin.left / 2)
+            .attr("transform", "rotate(-90)")
+            .text("Temperature (°C)");
+
+          // Add event listeners to nodes
+          const nodes = g
+            .selectAll(".node")
+            .data(lineData)
+            .enter()
+            .append("circle")
+            .attr("class", "node")
+            .attr("cx", (d) => xScale(d.date))
+            .attr("cy", (d) => yScale(d.temperature))
+            .attr("r", 5)
+            .on("mouseover", (event, d) => {
+              tooltip
+                .html(`Date: ${d.date.toDateString()}<br>Temperature: ${d.temperature.toFixed(1)}°C`)
+                .style("left", `${event.pageX + 10}px`)
+                .style("top", `${event.pageY}px`)
+                .style("opacity", 1);
+            })
+            .on("mouseout", (event, d) => {
+              tooltip.style("opacity", 0);
+            });
+
+          // Add legend
+          const legend = svg
+            .append("g")
+            .attr("class", "legend")
+            .attr("transform", `translate(${margin.left},${height + margin.top + margin.bottom - 50})`);
+
+          legend
+            .append("circle")
+            .attr("class", "legend-circle")
+            .attr("cx", 0)
+            .attr("cy", 0)
+            .attr("r", 5)
+            .attr("fill", "#ff7f0e");
+
+          legend
+            .append("text")
+            .attr("class", "legend-text")
+            .attr("x", 10)
+            .attr("y", 5)
+            .text("Temperature");
+
+        });
+    });
+  </script>
+</body>
+
+</html>

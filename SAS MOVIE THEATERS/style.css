@@ -1,0 +1,423 @@
+/*css external for group website*/
+@import url('https://fonts.googleapis.com/css?family=Holtwood+One+SC');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
+body
+{
+    background: Black;
+    color:white;
+    
+}
+
+
+/*Navigation bar CSS start*/
+.menu 
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(29, 28, 28);
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover:not(.active) {
+    background-color: #29AB87;
+}
+
+.active {
+    background-color: rgb(1, 112, 103);
+}
+
+/*Navigation Bar CSS end */
+
+
+.logo
+{
+    height: 120px;
+    width:120px;
+    border-radius:10%;
+}
+
+.title
+{
+    text-align:middle;
+    font-family: holtwood one Sc;
+    font-size: 50px;
+    padding-left:360px;
+}
+
+.citytitle
+{
+    font-family: pt sans narrow;
+    text-align:left;
+    font-size: 25px;
+    padding-left:200px;
+}
+
+#welcome
+{
+    position: fixed;
+}
+
+.logoabout
+{
+    padding:10px;   
+    font-family: cinzel;
+    font-weight: bold;
+    
+}
+.logoabout2
+{
+    padding:20px;
+    font-family: pt sans narrow;
+    font-size: 20px;
+}
+
+
+
+
+/*Slideshow homepage start*/
+
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+ position: relative;
+  margin: auto;
+}
+
+.image-map{
+    align-content: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: dodgerblue;
+}
+
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+ 
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+    background-color: tomato;
+   
+  }
+/*Slideshow Homepage end*/
+
+/*button CSS start */
+.button {
+    background-color:white; /* Green */
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color:transparent; 
+    color:white; 
+    border: 2px solid #fff;
+    
+}
+
+.button1:hover {
+    background-color:white;
+    color:black;
+    
+}
+
+
+/* button Css end*/
+
+
+
+
+.imgbook
+{
+    width:300;
+    height:200;
+    border:none;
+}
+
+.imgbook2
+{
+    width:300;
+    height:400;
+    border:none;
+}
+
+
+.reviframe
+{
+    height: 260px;
+    width:210px;
+}
+
+.imgcast
+{
+    height:100px;
+    width:100px;
+    border-radius:20px;
+    margin-right:20px;
+}
+
+.revtable
+{
+    color:#fff;
+    font-size: 20px;
+    text-align: left;
+    font-family: PT Sans Narrow;
+}
+
+.rev
+{
+    height: 640px;
+    width:720px;
+    
+    padding:20px;
+}
+
+a
+{
+    color:white;
+    text-decoration: none;
+}
+
+
+.multi
+{
+    background-color: #3cbc8d;
+    color:black;
+    
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: Black;
+  padding: 20px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container {
+  background-color: darkgray;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+.footer {
+	background:;
+}
+
+.footer .box-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.footer .box-container .box {
+	margin: 1rem;
+	text-align: center;
+	flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3 {
+	font-size: 2.5rem;
+	color: #fff;
+	padding: 1rem 0;
+}
+
+.footer .box-container .box p {
+	font-size: 1rem;
+	color: #eee;
+	padding: 0.7rem 0;
+}
+
+.footer .box-container .box p i {
+	padding-right: 0.5rem;
+	color: #f39c12;
+}
+
+.footer .box-container .box a {
+	font-size: 1rem;
+	display: block;
+	padding: 0.5rem 0;
+	color: #eee;
+    align-content: left;
+    
+.footer .box-container .box a {
+	font-size: 1rem;
+	display: block;
+	padding: 0.5rem 0;
+	color: #eee;
+    align-content: right;
+}
+
+.footer .box-container .box a:hover {
+	text-decoration: underline;
+}
+    
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}

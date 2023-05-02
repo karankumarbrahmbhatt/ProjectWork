@@ -1,0 +1,64 @@
+﻿@model OnlineStore.Models.ViewModel.UserPurchasesViewModel
+
+@{
+    ViewData["Title"] = "UserPurchases";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>User Purchases</h1>
+
+<div>
+    <hr />
+    @foreach (var i in Model.Purchases)
+    {
+        <div class="row">
+            <h3>Purchase from @i.CreationTime date</h3>
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product name</th>
+                            <th scope="col">Count</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var j in i.PurchaseProducts)
+                        {
+                            <tr>
+                                <td>
+                                    <a asp-action="Index"
+                               asp-controller="Product"
+                               asp-route-id="@j.ProductId">@j.Product.Name</a>
+                                </td>
+                                <td>
+                                    @j.Count
+                                </td>
+                                <td>
+                                    $@j.Product.Price
+                                </td>
+                                <td>
+                                    $@(j.Product.Price * j.Count)
+                                </td>
+                            </tr>
+                        }
+                        <tr class="table-info">
+                            <td colspan="3"><strong>Total price:</strong></td>
+                            <td><strong>$@i.FullPrice</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>
+                    Address: @i.Address
+                </h4>
+                <hr>
+            </div>
+        </div>
+        <br>
+        <hr>
+    }
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Home">Back to Main page</a>
+</div>

@@ -1,0 +1,261 @@
+﻿@model IEnumerable<OnlineStore.Models.Database.Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<br />
+<br />
+<!-- Cover Page Content Start -->
+<div class="row">
+	<!-- Title & Short Description -->
+	<div class="col-2">
+		<h1>Deals You Can't Miss<br>HUFT Clearance SALE!</h1>
+		<p>Upto 40% off <br>on Pet Essentials</p>
+		<a href="products.html" class="btn">Shop Now &#8594;</a>
+	</div>
+
+	<!-- Cover Side Image -->
+	<div class="col-2">
+		<img src="~/assets/img/image1.png">
+	</div>
+</div>
+<!-- Cover Page Content End -->
+<!-- Categories Featured Section Start -->
+<div class="categories">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-3">
+				<a href="products.html"></a>
+				<img src="~/assets/img/category-1.jpg">
+			</div>
+			<div class="col-3">
+				<a href="products.html"></a>
+				<img src="~/assets/img/category-2.jpg">
+			</div>
+		</div>
+	</div>
+</div>
+<!--Categories Featured Section End -->
+<!--Featured & Latest Product Section Start -->
+<div class="small-container">
+	<!-- Featured Product Start -->
+	<h2 class="title">Featured Products</h2>
+	<div class="row">
+		<!--Featured Product-1 -->
+		@foreach (var i in Model)
+		{
+			@await Html.PartialAsync("_CardProduct", i)
+			;
+		}
+	</div>
+	<!-- Featured Product End -->
+	<!-- Latest Product Start-->
+	<h2 class="title">Latest Products</h2>
+	<div class="row">
+		<!--Latest Product-1 -->
+		<div class="col-4">
+			<a href="product-details.html?5">
+				<img src="~/assets/img/product-5.jpg">
+				<h4>Dogs HUFT Personalised Tuxedo</h4>
+				<p>Easy to wear, cotton-blend dog clothing</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+				</div>
+				<p>$39.99</p>
+			</a>
+		</div>
+
+		<!--Latest Product-2 -->
+		<div class="col-4">
+			<a href="product-details.html?6">
+				<img src="~/assets/img/product-6.jpg">
+				<h4>HUFT Personalised Dog Lehenga</h4>
+				<p>Luxurious, easy to wear, festive dog clothing</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+					<i class="fa fa-star-o"></i>
+				</div>
+				<p>$39.99</p>
+			</a>
+		</div>
+
+		<!--Latest Product-3 -->
+		<div class="col-4">
+			<a href="product-details.html?7">
+				<img src="~/assets/img/product-7.jpg">
+				<h4>HUFT Sweatshirt For Dogs</h4>
+				<p>Soft, stretchable, easy to wear dog sweatshirt</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<p>$15.99</p>
+			</a>
+		</div>
+
+		<!--Latest Product-4 -->
+		<div class="col-4">
+			<a href="product-details.html?8">
+				<img src="~/assets/img/product-8.jpg">
+				<h4>HUFT Solid Polo Dog T-Shirt</h4>
+				<p>Stylish, comfortable, cotton-blend dog clothing</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+				</div>
+				<p>$20.00</p>
+			</a>
+		</div>
+	</div>
+
+	<div class="row">
+		<!--Latest Product-5 -->
+		<div class="col-4">
+			<a href="product-details.html?9">
+				<img src="~/assets/img/product-9.jpg">
+				<h4>HUFT Indian Indigo Print Kurta</h4>
+				<p>Comfortable, lightweight, printed dog clothing</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+				</div>
+				<p>$19.99</p>
+			</a>
+		</div>
+
+		<!--Latest Product-6 -->
+		<div class="col-4">
+			<a href="product-details.html?10">
+				<img src="~/assets/img/product-10.jpg">
+				<h4>HUFT Twinning - TShirt For Human</h4>
+				<p>Lightweight, comfortable & easy to wear</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+					<i class="fa fa-star-o"></i>
+				</div>
+				<p>$19.99</p>
+			</a>
+		</div>
+
+		<!--Latest Product-7 -->
+		<div class="col-4">
+			<a href="product-details.html?11">
+				<img src="~/assets/img/product-11.jpg">
+				<h4>HUFT Twinning - TShirt For Dogs </h4>
+				<p>Lightweight, comfortable & easy to wear</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+				</div>
+				<p>$19.99</p>
+			</a>
+		</div>
+
+		<!--Latest Product-8 -->
+		<div class="col-4">
+			<a href="product-details.html?12">
+				<img src="~/assets/img/product-12.jpg">
+				<h4>HUFT Bloom Wildly Scarf For Cats</h4>
+				<p>Elegant, comfortable , printed accessories</p>
+				<div class="rating">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-o"></i>
+				</div>
+				<p>$5.00</p>
+			</a>
+		</div>
+	</div>
+	<!-- Latest Product Section End -->
+</div>
+<!-- Featured & Latest Product Section End -->
+<!-- Offer Product Section Start -->
+<div class="offer">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-2">
+				<img src="~/assets/img/exclusive.png" class="offer-img">
+			</div>
+
+			<div class="col-2">
+				<h1>Join Our <br>Puppy and Kitten Club!</h1>
+				<small>Learn everything you need to be the<br>Ultimate puppy or kitten parent!</small><br>
+				<a href="#" class="btn">Learn More &#8594;</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Offer Product Section End -->
+<!-- Testimonial Section Start -->
+<div class="testimonial">
+	<div class="small-container">
+		<div class="row">
+			<!-- User Review-1 -->
+			<div class="col-3">
+				<i class="fa fa-quote-left"></i>
+				<p>
+					5 years ago, we started our journey of partnering with pet parents
+					and there’s one thing that hasn’t changed for us—humans who
+					love their pets more than they love anyone else, are our favourite kind of humans!
+				</p>
+				<img src="~/assets/img/user-1.png">
+				<h3>Diya Brahmbhatt</h3>
+				<p>Founder</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Testimonial Section End -->
+<!-- Brands Logo Start -->
+<div class="brands">
+	<div class="small-container">
+		<div class="row">
+			<!-- Brands Logo-2 -->
+			<div class="col-5">
+				<img src="~/assets/img/logo-oppo.png">
+			</div>
+
+			<!-- Brands Logo-3 -->
+			<div class="col-5">
+				<img src="~/assets/img/logo-coca-cola.png">
+			</div>
+
+			<!-- Brands Logo-4 -->
+			<div class="col-5">
+				<img src="~/assets/img/logo-paypal.png">
+			</div>
+
+			<!-- Brands Logo-5 -->
+			<div class="col-5">
+				<img src="~/assets/img/logo-philips.png">
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Brands Logo End -->
+

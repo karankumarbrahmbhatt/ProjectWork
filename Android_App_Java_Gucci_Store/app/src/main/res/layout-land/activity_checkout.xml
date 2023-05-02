@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7E7E7"
+    tools:context=".CheckoutActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:text="CHECKOUT"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/abeezee"
+        android:text="YOU ARE CHECKING OUT AS:"
+        app:layout_constraintBottom_toTopOf="@+id/loginMail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/loginMail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="34dp"
+        android:fontFamily="@font/abeezee"
+        android:text="bestprofessor@gmail.com"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="18dp"
+        android:fontFamily="@font/abeezee"
+        android:paddingLeft="0sp"
+        android:text="Shipping Address"
+        android:textColor="#343434"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lastName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginMail" />
+
+    <EditText
+        android:id="@+id/firstName"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=" First Name"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/Address"
+        app:layout_constraintEnd_toStartOf="@+id/lastName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/Province"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="17dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Province"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/PostalCode"
+        app:layout_constraintEnd_toStartOf="@+id/PostalCode"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/lastName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=" Last Name"
+        app:layout_constraintBottom_toTopOf="@+id/Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/firstName"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/PostalCode"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Postal Code"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Province"
+        app:layout_constraintTop_toBottomOf="@+id/City"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/Address"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Address"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/City"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastName" />
+
+    <EditText
+        android:id="@+id/City"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="19dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="City"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/PostalCode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Address" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/abeezee"
+        android:text="Payment Information"
+        android:textColor="#343434"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CardNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PostalCode" />
+
+    <EditText
+        android:id="@+id/CardNumber"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Credit Card Number"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/Cvv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <EditText
+        android:id="@+id/ExpiryDate"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Expiry Date"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/Cvv"
+        app:layout_constraintEnd_toStartOf="@+id/Cvv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Cvv" />
+
+    <EditText
+        android:id="@+id/Cvv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="CVV"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPurchase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ExpiryDate"
+        app:layout_constraintTop_toBottomOf="@+id/CardNumber" />
+
+    <Button
+        android:id="@+id/btnPurchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:backgroundTint="#000000"
+        android:text="Purchase"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Cvv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductActivity">
+
+    <TextView
+        android:id="@+id/nameDetail"
+        android:layout_width="437dp"
+        android:layout_height="77dp"
+        android:layout_marginEnd="1dp"
+        android:background="#000000"
+        android:fontFamily="@font/abeezee"
+        android:gravity="center"
+        android:text="HOME"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/ProductList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <ImageButton
+        android:id="@+id/btnDetailHome"
+        android:layout_width="71dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintBottom_toTopOf="@+id/ProductList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <ImageButton
+        android:id="@+id/btnDetailCart"
+        android:layout_width="71dp"
+        android:layout_height="63dp"
+        android:src="@drawable/ic_baseline_shopping_cart_24"
+        app:layout_constraintBottom_toTopOf="@+id/ProductList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ProductList"
+        android:layout_width="415dp"
+        android:layout_height="661dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameDetail" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

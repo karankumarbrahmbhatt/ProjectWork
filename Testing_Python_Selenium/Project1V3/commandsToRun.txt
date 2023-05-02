@@ -1,0 +1,6 @@
+python -m unittest test_hms.py 
+Or
+pytest
+python hms_validTest.py
+python hms_invalidTest.py
+python hms_deleteTest.py

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#287AC3"
+        android:layout_margin="0dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:typeface="sans"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/mahameru"
+            android:textSize="22dp"
+            android:text="Fill info to complete purchase"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@android:color/black"
+        android:layout_marginTop="-3dp"
+        android:visibility="gone"
+        android:layout_height="2dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Name" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Email" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/address"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Address" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/city"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="City" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/province"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Province" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/country"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Country" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/credit_card"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Credit Card Number" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvv"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="number"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="CVV" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/expiry"
+        android:backgroundTint="@android:color/darker_gray"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@android:color/black"
+        android:singleLine="true"
+        android:layout_marginTop="10dp"
+        android:inputType="number"
+        android:textSize="15dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Expiry" />
+
+
+
+
+
+</LinearLayout>
+</ScrollView>

@@ -1,0 +1,275 @@
+* { box-sizing: border-box; }
+
+body { 
+	background-color: #D2B48C;
+	color: #221811; 
+	font-family: Tahoma, Arial, sans-serif;
+	margin: 0;
+}
+
+
+#wrapper { 
+	background-color: #231814;
+	padding:0;
+}
+
+header { 
+	color: #231814;
+	background-color: #D2B48C;
+	padding-top: 5px;
+    padding-bottom: 5px ; 	
+	background-image: url(images/cup.jpg);
+	background-repeat: no-repeat;
+	padding-left: 105px;
+	height: 128px;
+}
+
+header a{ 
+    text-decoration: none; 
+}
+header a:link { color: #231814 ; }
+header a:visited { color: #231814 ; }
+header a:hover { color: #FEF6C2 ; }
+
+
+nav { 
+	text-align: center; 
+	font-size: 1.5em;
+}
+	
+nav a { 
+	text-decoration: none; 
+}
+
+nav a:link { color: #FEF6C2; }
+
+nav a:visited{color:#D2B48C;}
+
+nav a:hover{color:#CC9933;}
+
+nav ul {
+	list-style-type: none;
+    padding-left: 0px;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	font-size: 1.25em;
+} 
+
+nav li{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+h1 {  
+	font-size: 2em ;
+}
+
+h2 {  
+	color: #8C3826;
+}
+
+h3 {
+    color:#8C3826;
+}
+
+h4 {
+    background-color: #D2B48C;
+    font-size: 1.2em;
+    padding-left: 0.5em;
+	text-transform:uppercase;
+	border-bottom: 2px solid #8C3826; 
+	padding-bottom:0;
+	clear: left;
+}
+
+main {
+    display: block;
+	background-color: #FEF6C2;
+	padding: 0 0 2em 0;
+}
+	
+main h2, main h3, main h4, main p, main div, main dl {padding-left: 1em; padding-right: 1em; }
+
+main ul{
+    padding-left: 2em;
+}
+
+dt {
+    color:#8C3826;
+}
+
+.details {
+    padding-left: 20% ;
+    padding-right: 20% ;
+	overflow: auto;
+}
+
+
+img {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+footer 
+{ 
+	background-color: #D2B48C;
+	font-size: small;
+	font-style: italic; 
+	text-align: center; 
+	padding: 1em ;
+	border-top: 2px solid #8c3826;
+}
+
+
+table{
+    width: 90%;
+    border-spacing: 0px;
+    margin: auto;
+}
+
+td,th{
+    padding: 10px;
+}
+
+tr:nth-of-type(odd){
+    background-color: #D2B48E;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em; 
+	width: 80%;
+}
+
+input, textarea { margin-bottom: .5em; }
+
+#homehero {
+    height: 300px;
+	background-image: url(images/road.jpg);
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+}
+
+#heromugs {
+    height: 300px;
+	background-image: url(images/threemugs.jpg);
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+}
+
+#heroguitar {
+    height: 300px;
+	background-image: url(images/guitar.jpg);
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+}
+
+
+#herojobs{
+    height: 300px;
+    background-image: url(images/coffeecup.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#mobile{
+    display: inline;
+}
+
+#desktop{
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+	
+	header{
+        text-align: center;
+        padding-left: 0;
+    }
+	
+	h1{
+        font-size: 3em;
+    }
+	
+	nav ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+	
+	nav li{
+        border-bottom: none;
+    }
+	
+	.details{
+		display: flex;
+        flex-direction: row;
+    }
+	h4{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+	
+	form { 
+	  width: 40%;
+	  display: grid; 
+	  grid-gap: 1em; gap: 1em; 
+	  grid-template-columns: 6em 1fr; 
+	}
+	  
+	input[type="submit"] { 
+	  grid-column: 2 / 3;
+	  width: 9em; 
+	}	
+	
+	#homehero{
+        height: 50vh;
+        background-image: url(images/hero.jpg);
+    }
+    #heromugs{
+        background-image: url(images/heromugs.jpg);
+    }
+    #heroguitar{
+        background-image: url(images/heroguitar.jpg);
+    }
+	#herojobs{
+		background-image: url(images/herojobs.jpg);
+	}
+	#flow{
+		display: flex;
+        flex-direction: row;
+    }
+	#mobile{
+        display: none;
+    }
+    #desktop{
+        display: inline;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+	@supports (display: grid) {
+		header { grid-area: header; }
+		nav  { grid-area: nav; }
+		main { grid-area: main; }
+		footer { grid-area: footer; }
+		#wrapper {
+			display: grid;
+			grid-template:
+				"header header"
+				"nav main"
+				"footer footer"
+				/ 200px; 
+		}
+		nav ul { flex-direction: column; }
+		header { background-image: url(images/coffeelogo.jpg);}
+	}
+}

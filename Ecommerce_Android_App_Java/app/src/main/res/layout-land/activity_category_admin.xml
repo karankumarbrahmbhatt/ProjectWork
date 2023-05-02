@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".AdminCategoryActivity">
+
+    <TextView
+        android:id="@+id/slogan_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Add New Product"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linear1_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/slogan_category"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/earbuds"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_baseline_headset_24" />
+
+        <ImageView
+            android:id="@+id/laptops"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_baseline_laptop_mac_24" />
+
+        <ImageView
+            android:id="@+id/watchs"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_baseline_watch_24" />
+
+        <ImageView
+            android:id="@+id/mobilephones"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_baseline_phone_iphone_24" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/check_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/admin_logout_btn"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Check New Orders"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/admin_logout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20dp" />
+</RelativeLayout>

@@ -1,0 +1,123 @@
+﻿@model OnlineStore.Models.ViewModel.PurchaseViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using OnlineStore.Controllers;
+<h1>Purchase</h1>
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Make">
+            <div class="row">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Surname" class="control-label">Surname:</label>
+                    <input asp-for="Surname" value="@Model.Surname" class="form-control" />
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Name:</label>
+                    <input asp-for="Name" value="@Model.Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City" class="control-label">City:</label>
+                    <input asp-for="City" class="form-control" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Street" class="control-label">Street:</label>
+                    <input asp-for="Street" class="form-control" />
+                    <span asp-validation-for="Street" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="House" class="control-label">House:</label>
+                    <input asp-for="House" class="form-control" />
+                    <span asp-validation-for="House" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Apartment" class="control-label">Apartment:</label>
+                    <input asp-for="Apartment" class="form-control" />
+                    <span asp-validation-for="Apartment" class="text-danger"></span>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <h3>Total price:</h3>
+                            <h3 class="fw-bold">$@Model.TotalCost </h3>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <h5>Credit Card:</h5>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Credit Expiry:</h5>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <h5>Credit CVV:</h5>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="post" class="form-label">Delivery Method:</label>
+                            <select id="post" class="form-select">
+                                <option value="New Post">Home Deliveryp</option>
+                                <option value="Meest">Po BOX</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="delivery" class="form-label">Delivery Option:</label>
+                            <select id="delivery" class="form-select">
+                                <option value="On home">Home</option>
+                                <option value="In post office">Office</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <h5>Delivery Cost:</h5>
+                            <p class="fw-bold">$<span id="delcost">0</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Total Cost:</h5>
+                            <p class="fw-bold">$<span id="total">@Model.TotalCost</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Proceed Payment" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    var totalcost = @Model.TotalCost;
+    var officecost = { "New Post": "35", "Meest": "20", "UkrPost": "15" };
+    var deliverycost = { "On home": "10", "In post office": "0" };
+    $("#post, #delivery").change(function () {
+        let del = $("#delivery").val();
+        let post = $("#post").val();
+        let fc = parseInt(officecost[post]);
+        let dc = parseInt(deliverycost[del]);
+        let total = totalcost + fc + dc;
+        $("#delcost").html((fc + dc).toString());
+        $("#total").html(total.toString());
+    });
+    $(document).ready(function () {
+        $("#post").trigger("change");
+    });
+</script>
+

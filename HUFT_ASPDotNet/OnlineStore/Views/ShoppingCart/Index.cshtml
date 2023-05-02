@@ -1,0 +1,67 @@
+﻿@model OnlineStore.Models.ViewModel.ShoppingCartModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .danger{
+        background:red;
+    }
+</style>
+
+<!-- Cart Item Details Start -->
+<div class="small-container cart-page">
+    <table class="cart-items">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var item in Model.ShoppingCarts)
+        {
+            <tr>
+                <td>
+                    <div class="cart-info">
+
+                        <div>
+                            <p><b><a href="/product/@item.ProductId">@item.Product.Name</a></b></p>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <div class="input-group-append">
+                            <input type="number" class="form-control count-form" id="qty-@item.ProductId" min="1" max="20" data-id="@item.ProductId" value="@item.Count" /> &nbsp;
+                            <a class="btn btn-outline-secondary count" data-id="@item.ProductId" href="/api/cart/add/@item.ProductId?count=#&redirect=@Context.Request.Path">
+                                Save
+                            </a>
+                        </div>
+                    </div>
+                    
+                </td>
+                <td><b>$@(item.Product.Price * item.Count)</b></td>
+                <td><a href="/api/cart/remove/@item.ProductId?redirect=@Context.Request.Path" class="btn danger">Remove</a></td>
+            </tr>
+        }
+    </table>
+
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td class="subtotal">$@Model.TotalPrice</td>
+            </tr>
+        </table>
+    </div>
+    <a href="/product/list" class="btn">Continue shopping</a>
+    @if (Model.TotalPrice > 0)
+    {
+        <a href="/purchase" class="btn proceed-checkout">Proceed to Checkout</a>
+    }
+</div>
+
+
+<!-- Cart Item Details End -->

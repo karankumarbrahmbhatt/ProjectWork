@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Heads Up For Tails</title>
+	<!-- Font Link -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"> 
+	<!-- Font Awesome CDN Link -->
+    <script src="https://kit.fontawesome.com/8dd38fae4d.js" crossorigin="anonymous"></script>
+	<!-- Custom CSS File Link -->
+	<link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+</head>
+<body>
+    <!-- Head Section Start -->
+    <div class="header">
+        <div class="container">
+            <!-- Navigation Header Start -->
+            <div class="navbar">
+                <!-- Site Logo -->
+                <div class="logo">
+                    <a href="index.html"><img src="~/assets/img/logo.png" alt="Shop Logo" width="125px"></a>
+                </div>
+                <!-- Navigation Option -->
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Product" asp-action="List">Products</a></li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li>
+                                <a asp-area="" asp-controller="Account" asp-action="Info">Account</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                            <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
+                        }
+                     </ul>
+                </nav>
+                <!-- Cart Icon -->
+                <a asp-area="" asp-controller="ShoppingCart" asp-action="Index"><img src="~/assets/img/cart.png" width="25px" height="25px" alt="Cart Icon"></a>
+                <img src="~/assets/img/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+            <!-- Header Navigation End -->
+        </div>
+    </div>
+    <!-- Head Section End -->
+   
+    <div class="container">
+        <main role="main" class="pb-3" style="border:0px red solid;">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Footer Section Start-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and IOS Device</p>
+                    <div class="app-logo">
+                        <img src="~/assets/img/play-store.png">
+                        <img src="~/assets/img/app-store.png">
+                    </div>
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="~/assets/img/logo-black.png">
+                    <p> Collars, Leashes, Harnesses | HUFT Offers | Dog Clothes | Dog T-shirts & Shirts | Personalised Collars | Dog Collars |</p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Useful Link</h3>
+                    <ul>
+                        <li>Cuppons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Appiliate</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">&#169; Copyright-2022 | Heads Up For Tails</p>
+        </div>
+    </div>
+    <!-- Footer Section End-->
+    <!-- Js for Menu toggle -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    @RenderSection("Scripts", required: false)
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <script>
+        $(".count").click(function () {
+
+            let count = $("#qty-" + $(this).attr("data-id")).val();
+
+            //let input = this.previousElementSibling;
+            //let count = input.value;
+            //alert(count);
+            if (Math.sign(count) === 1) {
+                this.href = this.href.replace("#", count);
+            }
+            else {
+                this.stopPropagation();
+            }
+        });
+    </script>
+    <!-- Js for Toggle Form -->
+
+</body>
+</html>

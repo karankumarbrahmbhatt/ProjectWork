@@ -1,0 +1,54 @@
+﻿@model OnlineStore.Models.ViewModel.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+	.form-container .error {
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 10px;
+    color: #555;
+    color: red;
+    cursor: pointer;
+    width: 180px;
+    display: inline-block;
+}
+</style>
+
+
+<!-- Account Page Start -->
+	<div class="account-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-2">
+					<img src="~/assets/img/image1.png" width="100%">
+				</div>
+
+				<div class="col-2">
+					<div class="form-container">
+						<div class="form-btn">
+							<span>Login</span>
+							<hr id="Indicator">
+						</div>
+
+						<!-- Login Form -->
+						<form asp-action="Login">
+							<input type="email" asp-for="Email" placeholder="Email" id="email" />
+						<span asp-validation-for="Email" class="error"></span>
+							<input type="password" asp-for="Password" class="form-control" placeholder="Enter your password" type="password" />
+                        <span asp-validation-for="Password" class="error"></span>
+							<button type="submit" class="btn">Login</button>
+							<a href="#">Forgot Password?</a>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Account Page End -->
+

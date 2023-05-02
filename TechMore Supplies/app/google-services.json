@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1055011764286",
+    "project_id": "techmore-supplies",
+    "storage_bucket": "techmore-supplies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055011764286:android:3ab8f8ebf986926d98f96f",
+        "android_client_info": {
+          "package_name": "com.example.techmoresupplies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055011764286-b66l37nr5fpjoull7tnkae4m0a1b18a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV8x58-4Peco7SJ9l4aeb58uelhMTOUaE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055011764286-b66l37nr5fpjoull7tnkae4m0a1b18a4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

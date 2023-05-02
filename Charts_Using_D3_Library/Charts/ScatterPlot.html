@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Scatter Plot for Temperature in New York City</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* CSS styles here */
+    .chart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+
+    .axis text {
+      font-size: 12px;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: black;
+      stroke-width: 1px;
+      shape-rendering: crispEdges;
+    }
+
+    .dot {
+      fill: steelblue;
+      stroke: white;
+    }
+
+    .tooltip {
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    .legend {
+      font-size: 14px;
+    }
+
+    .legend-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  </style>
+  <nav>
+    <a href="../index.html">Home</a>
+    <p>Click the link above to get back to HOME</p>
+  </nav>
+</head>
+
+<body>
+  <h1>Scatter Plot for Temperature in New York City</h1>
+  <h2>January 2023</h2>
+  <div class="chart"></div>
+  <script>
+    const apiKey = "cec814f7725093594344f95658039db9";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=New York&appid=${apiKey}`;
+
+    // Make API call
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        const dailyData = data.list.reduce((acc, item) => {
+          const date = new Date(item.dt_txt).toLocaleDateString();
+          const temperature = item.main.temp - 273.15;
+          if (acc[date]) {
+            acc[date].temperatureSum += temperature;
+            acc[date].count++;
+          } else {
+            acc[date] = {
+              date: date,
+              temperatureSum: temperature,
+              count: 1,
+            };
+          }
+          return acc;
+        }, {});
+
+        const barData = Object.values(dailyData).map((item) => {
+          return {
+            date: item.date,
+            averageTemperature: item.temperatureSum / item.count,
+          };
+        });
+
+        // Create chart using D3
+        const margin = { top: 20, right: 20, bottom: 60, left: 60 };
+        const width = 600 - margin.left - margin.right;
+        const height = 400 - margin.top - margin.bottom;
+
+        const svg = d3
+          .select(".chart")
+          .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+          .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Create scales
+        const x = d3
+          .scaleTime()
+          .domain(d3.extent(data.list, (d) => new Date(d.dt_txt)))
+          .range([0, width]);
+
+        const y = d3
+          .scaleLinear()
+          .domain(d3.extent(data.list, (d) => d.main.temp - 273.15))
+          .range([height, 0]);
+
+        // Add axes
+        const xAxis = d3.axisBottom(x);
+        const yAxis = d3.axisLeft(y);
+
+        svg
+          .append("g")
+          .attr("class", "x axis")
+          .attr("transform", `translate(0,${height})`)
+          .call(xAxis);
+
+        svg
+          .append("g")
+          .attr("class", "y axis")
+          .call(yAxis);
+
+        svg
+          .append("text")
+          .attr("x", width / 2)
+          .attr("y", height + margin.bottom)
+          .attr("text-anchor", "middle")
+          .text("Date");
+
+        // Add y axis
+        svg
+          .append("g")
+          .attr("class", "y axis")
+          .call(yAxis);
+
+
+        // Add y axis label
+        svg
+          .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("x", -height / 2)
+          .attr("y", -margin.left)
+          .attr("dy", "1em")
+          .attr("text-anchor", "middle")
+          .text("Temperature (°C)");
+
+        // Add data points
+        svg
+          .selectAll(".dot")
+          .data(data.list)
+          .enter()
+          .append("circle")
+          .attr("class", "dot")
+          .attr("r", 3)
+          .attr("cx", (d) => x(new Date(d.dt_txt)))
+          .attr("cy", (d) => y(d.main.temp - 273.15))
+          .on("mouseover", handleMouseOver)
+          .on("mousemove", handleMouseMove)
+          .on("mouseout", handleMouseOut);
+
+        // Add tooltip
+        const tooltip = d3
+          .select(".chart")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+
+        // Add mouseover event handler
+        function handleMouseOver(event, d) {
+          d3.select(this).attr("r", 6);
+          tooltip.style("opacity", 1).html(`${new Date(d.dt_txt)}<br>${(d.main.temp - 273.15).toFixed(2)}°C`);
+        }
+
+        // Add mousemove event handler
+        function handleMouseMove(event, d) {
+          tooltip
+            .style("left", `${event.pageX + 10}px`)
+            .style("top", `${event.pageY}px`);
+        }
+
+        // Add mouseout event handler
+        function handleMouseOut(event, d) {
+          d3.select(this).attr("r", 3);
+          tooltip.style("opacity", 0);
+        }
+        function goBack() {
+          window.history.back();
+        }
+      });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+﻿@model OnlineStore.Models.ViewModel.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (ViewBag.message != null)
+{
+    if (ViewBag.good)
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            @ViewBag.message
+        </div>
+    }
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-secondary text-white">
+                    <h4>Register</h4>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.message != null)
+                    {
+                        if (ViewBag.good)
+                        {
+                            <div class="alert alert-success">
+                                @ViewBag.message
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning">
+                                @ViewBag.message
+                            </div>
+                        }
+                    }
+
+                    <form asp-action="Register">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="form-label">Name</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Surname" class="form-label">Surname</label>
+                            <input asp-for="Surname" class="form-control" />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="form-label">Password</label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword" class="form-label">Confirm password</label>
+                            <input asp-for="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a href="@Url.Action("Index", "Home")" class="btn btn-outline-secondary">Back to Home</a>
+</div>

@@ -1,0 +1,79 @@
+﻿@model OnlineStore.Models.ViewModel.RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+	.form-container {
+		height: 560px;
+		width:350px;
+		padding: 20px 15px;
+	}
+
+	.form-container .error {
+		font-weight: bold;
+		padding: 0 10px;
+		font-size: 10px;
+		color: #555;
+		color: red;
+		cursor: pointer;
+		width: 180px;
+		display: inline-block;
+	}
+
+</style>
+
+@if (ViewBag.message != null)
+{
+    if (ViewBag.good)
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            @ViewBag.message
+        </div>
+    }
+}
+
+<!-- Account Page Start -->
+<div class="account-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-2">
+				<img src="~/assets/img/image1.png" width="100%">
+			</div>
+
+			<div class="col-2">
+				<div class="form-container">
+					<div class="form-btn">
+						
+						<span>Register</span>
+						<hr id="Indicator">
+					</div>
+
+					<!-- Register Form -->
+					<form asp-action="Register">
+						<input type="text" asp-for="Name" placeholder="Name">
+						<span asp-validation-for="Name" class="error"></span>
+						<input type="text" asp-for="Surname" placeholder="Surname">
+						<span asp-validation-for="Surname" class="error"></span>
+						<input type="email" asp-for="Email"  placeholder="Email" name="email">
+						<span asp-validation-for="Email" class="error"></span>
+						<input type="password" asp-for="Password" placeholder="Password">
+						<span asp-validation-for="Password" class="error"></span>
+						<input type="password" asp-for="ConfirmPassword" placeholder="Reenter Password">
+						<span asp-validation-for="ConfirmPassword" class="error"></span>
+						<button type="submit" class="btn">Register</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Account Page End -->

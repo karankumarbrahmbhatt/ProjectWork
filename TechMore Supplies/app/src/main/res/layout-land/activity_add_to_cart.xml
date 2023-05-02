@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity_add_to_cart">
+
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/techmore_supply_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="1dp">
+
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="-" />
+
+        <EditText
+            android:id="@+id/qty"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:text="1"
+          />
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="+" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_gravity="center"
+        android:layout_below="@id/item_image"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:fontFamily="@font/mahameru"
+        android:text="Item Name"
+        android:textColor="@android:color/black"
+        android:textSize="25dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/item_name"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/mahameru"
+        android:gravity="center"
+        android:text="Item Price"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/item_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/item_name"
+
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/mahameru"
+        android:gravity="center"
+        android:text="Item Description"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/btn_add_to_cart"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:hint="Add to Cart"
+        android:singleLine="true"
+        android:textColor="#fff"
+        android:layout_alignParentBottom="true"
+        android:textColorHint="#fff"
+        android:layout_marginBottom="20dp"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+
+</LinearLayout>
+</ScrollView>
